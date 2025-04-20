@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Book Store</title>
+    <title>Kitobxonlik</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
@@ -33,8 +33,8 @@
                             Kitoblar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="pauloDropdown">
-                            <li><a class="dropdown-item" href="#">Kitob janrlari</a></li>
-                            <li><a class="dropdown-item" href="#">Kitob klublari</a></li>
+                            <li><a class="dropdown-item" href="#kitob_janr">Kitob janrlari</a></li>
+                            <li><a class="dropdown-item" href="#kitob_klub">Kitob klublari</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="#">Tadbir va tanlovlar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Yozuvchilar</a>
+                        <a class="nav-link" href="#yozuvchilar">Yozuvchilar</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center position-relative">
@@ -58,8 +58,8 @@
                     </div>
 
                     <a class="btn btn-warning kitoblarim-btn" href="#">Mening Kitoblarim</a>
-                    <button class="btn btn-login me-2">Login</button>
-                    <button class="btn btn-register">Register</button>
+                    <a href="templates/login.html"><button class="btn btn-login me-2">Login</button></a>
+                    <a href="templates/register.html"><button class="btn btn-register">Register</button></a>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
     </div>
 
     <!-- Top Categories Section -->
-    <section class="container my-5">
+    <section class="container my-5" id="kitob_janr">
         <h2 class="text-center mb-4">Eng Sara Kategoriyalar</h2>
         <div class="text-center mb-4">
             <button class="btn btn-outline-dark category-btn active" data-category="all">Barchasi</button>
@@ -136,7 +136,7 @@
             <button class="btn btn-outline-dark category-btn" data-category="zamonaviy">Zamonaviy Nashr</button>
             <button class="btn btn-outline-dark category-btn" data-category="mashhur">Mashhur Mualliflar</button>
         </div>
-        <div class="row" id="bookList">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="bookList">
 
             <!-- Kitoblar -->
             <div class="col-md-3 mb-4 book-card" data-category="tarixiy">
@@ -145,7 +145,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Muhabbatlar – Birlik Ramzi</h5>
                         <p class="card-text">Tarixiy qadriyatlar va ruhiy uyg‘unlik haqida.</p>
-                        <p class="card-text text-primary">$122.00</p>
+                        <p class="card-text text-primary">97,000</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Ufq</h5>
                         <p class="card-text">Yozuvchining hayotiy xotiralari va izlanishlari haqida.</p>
-                        <p class="card-text text-primary">125 000 so'm</p>
+                        <p class="card-text text-primary">125,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Kecha va Kunduz</h5>
                         <p class="card-text">O‘zbek milliy uyg‘onish davrining chuqur tahlili.</p>
-                        <p class="card-text text-primary">260 000 so'm</p>
+                        <p class="card-text text-primary">120,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Ikki Eshik Orasi</h5>
                         <p class="card-text">Yurak va ong o‘rtasidagi kurash haqida.</p>
-                        <p class="card-text text-primary">95 000 so'm</p>
+                        <p class="card-text text-primary">95,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Uch Ildiz</h5>
                         <p class="card-text">Oila va jamiyat orasidagi murakkab munosabatlar.</p>
-                        <p class="card-text text-primary">55 000 so'm</p>
+                        <p class="card-text text-primary">55,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Chinor</h5>
                         <p class="card-text">Yashash, yo‘qotish va bardosh haqida falsafiy asar.</p>
-                        <p class="card-text text-primary">140 000 so'm</p>
+                        <p class="card-text text-primary">80,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Qora Ko‘zlar</h5>
                         <p class="card-text">Muhabbat va sadoqatning chinakam sinovi.</p>
-                        <p class="card-text text-primary">160 000 so'm</p>
+                        <p class="card-text text-primary">76,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Yulduzli Tunlar</h5>
                         <p class="card-text">Millat va muhabbat yo‘lida fidoyilik.</p>
-                        <p class="card-text text-primary">105 000 so'm</p>
+                        <p class="card-text text-primary">105,000 so'm</p>
                         <div>★★★★★</div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
 
 
     <!-- authors carousel -->
-    <section class="authors-carousel container my-5">
+    <section class="authors-carousel container my-5" id="yozuvchilar">
         <h2 class="text-center mb-4">Taniqli Mualliflari</h2>
         <div class="author-carousel-wrapper">
             <button class="author-carousel-btn author-prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
@@ -298,8 +298,8 @@
 
 
     <!-- advertising -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Eng ko'p o'qilgan</h2>
+    <div class="container my-5" id="kitob_klub">
+        <h2 class="text-center mb-4">Yangi nashr etilgan kitoblar</h2>
         <div class="row">
             <!-- Featured Book (Left Side) -->
             <div class="col-md-6">
@@ -435,191 +435,86 @@
 
 
     <!-- footer -->
-    <!DOCTYPE html>
-    <html lang="uz">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Footer va Banner - Kitobxonlik</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
-            .banner-section {
-                background-color: #a3bffa;
-                padding: 20px 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .banner-section img {
-                position: absolute;
-                opacity: 0.2;
-            }
-
-            .banner-section img:nth-child(1) {
-                top: 10px;
-                left: 10px;
-                transform: rotate(-15deg);
-            }
-
-            .banner-section img:nth-child(2) {
-                top: 20px;
-                left: 150px;
-                transform: rotate(20deg);
-            }
-
-            .banner-section img:nth-child(3) {
-                top: 10px;
-                right: 150px;
-                transform: rotate(-10deg);
-            }
-
-            .banner-section img:nth-child(4) {
-                top: 20px;
-                right: 10px;
-                transform: rotate(15deg);
-            }
-
-            .subscribe-box {
-                background-color: white;
-                border-radius: 50px;
-                max-width: 500px;
-                margin: 0 auto;
-                padding: 5px;
-            }
-
-            .subscribe-box input {
-                border: none;
-                outline: none;
-                flex: 1;
-            }
-
-            .subscribe-box button {
-                border-radius: 50px;
-                background-color: #343a40;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-            }
-
-            .footer-section {
-                background-color: #fff;
-                padding: 40px 0;
-            }
-
-            .footer-section h5 {
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-
-            .footer-section a {
-                color: #666;
-                text-decoration: none;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .footer-section a:hover {
-                color: #000;
-            }
-
-            .footer-section .social-icons a {
-                margin-right: 10px;
-                font-size: 1.5em;
-            }
-
-            .blog-post img {
-                width: 50px;
-                height: 50px;
-                object-fit: cover;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-        </style>
-    </head>
-
-    <body>
-        <!-- Banner Section -->
-        <div class="banner-section">
-            <img src="https://via.placeholder.com/100x150" alt="Book 1">
-            <img src="https://via.placeholder.com/100x150" alt="Book 2">
-            <img src="https://via.placeholder.com/100x150" alt="Book 3">
-            <img src="https://via.placeholder.com/100x150" alt="Book 4">
-            <div class="container text-center py-4">
-                <h4 class="mb-3">Yangiliklarga Obuna Bo‘ling</h4>
-                <div class="subscribe-box d-flex align-items-center">
-                    <input type="email" class="form-control" placeholder="Sizning Email Manzilingiz">
-                    <button class="btn">Obuna Bo‘lish</button>
-                </div>
+    <!-- Banner Section -->
+    <div class="banner-section">
+        <img src="img/front_img_png/01.png" style="width: 150px;" alt="Book 1">
+        <img src="img/front_img_png/02.png" style="width: 150px;" alt="Book 2">
+        <img src="img/front_img_png/03.png" style="width: 150px;" alt="Book 3">
+        <img src="img/front_img_png/04.png" style="width: 150px;" alt="Book 4">
+        <div class="container text-center py-4">
+            <h4 class="mb-3">Yangiliklarga Obuna Bo‘ling</h4>
+            <div class="subscribe-box d-flex align-items-center">
+                <input type="email" class="form-control" placeholder="Sizning Email Manzilingiz">
+                <button class="btn">Obuna Bo‘lish</button>
             </div>
         </div>
+    </div>
 
-        <!-- Footer Section -->
-        <div class="footer-section">
-            <div class="container">
-                <div class="row">
-                    <!-- Contact Info -->
-                    <div class="col-md-3">
-                        <h5>Aloqa Ma’lumotlari</h5>
-                        <p>🏠 Khiva sh., Do'stlik, 45-uy, 12-xonadon, O‘zbekiston</p>
-                        <p>📞 +998 71 123-45-67</p>
-                        <p>📱 +998 90 987-65-43</p>
-                        <p>✉️ info@kitobxonlik.uz</p>
-                        
-                    </div>
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-3">
+                    <h5>Aloqa Ma’lumotlari</h5>
+                    <p>🏠 Khiva sh., Do'stlik, 45-uy, 12-xonadon, O‘zbekiston</p>
+                    <p>📞 +998 71 123-45-67</p>
+                    <p>📱 +998 90 987-65-43</p>
+                    <p>✉️ info@kitobxonlik.uz</p>
 
-                    <!-- Info -->
-                    <div class="col-md-3">
-                        <h5>Ma’lumot</h5>
-                        <a href="#">Biz Haqimizda</a>
-                        <a href="#">Aloqa</a>
-                        <a href="#">Karyera</a>
-                        <a href="#">Bizning Tariximiz</a>
-                        <a href="#">Matbuot</a>
-                    </div>
+                </div>
 
-                    <!-- Policy -->
-                    <div class="col-md-3">
-                        <h5>Siyosat</h5>
-                        <a href="#">Qaytarish Siyosati</a>
-                        <a href="#">Foydalanish Shartlari</a>
-                        <a href="#">Maxfiylik</a>
-                        <a href="#">Sayt Xaritasi</a>
-                    </div>
+                <!-- Info -->
+                <div class="col-md-3">
+                    <h5>Ma’lumot</h5>
+                    <a href="#">Biz Haqimizda</a>
+                    <a href="#">Aloqa</a>
+                    <a href="#">Karyera</a>
+                    <a href="#">Bizning Tariximiz</a>
+                    <a href="#">Matbuot</a>
+                </div>
 
-                    <!-- Blog -->
-                    <div class="col-md-3">
-                        <h5>Blogdan</h5>
-                        <div class="blog-post d-flex mb-3">
-                            <i class="fa-solid fa-blog p-3 fs-4" style="color: #FFD43B;"></i>
-                            <div>
-                                <a href="#">Blog Postini Qanday Yozish Kerak: 5 Qadamda</a>
-                            </div>
+                <!-- Policy -->
+                <div class="col-md-3">
+                    <h5>Siyosat</h5>
+                    <a href="#">Qaytarish Siyosati</a>
+                    <a href="#">Foydalanish Shartlari</a>
+                    <a href="#">Maxfiylik</a>
+                    <a href="#">Sayt Xaritasi</a>
+                </div>
+
+                <!-- Blog -->
+                <div class="col-md-3">
+                    <h5>Blogdan</h5>
+                    <div class="blog-post d-flex mb-3">
+                        <i class="fa-solid fa-blog p-3 fs-4" style="color: #FFD43B;"></i>
+                        <div>
+                            <a href="#">Blog Postini Qanday Yozish Kerak: 5 Qadamda</a>
                         </div>
-                        <div class="blog-post d-flex">
-                            <i class="fa-solid fa-clipboard fs-4 p-3" style="color: #FFD43B;"></i>
-                            <div>
-                                <a href="#">Trafikni Oshirish uchun 9 ta Kontent Marketing G‘oyasi</a>
-                            </div>
+                    </div>
+                    <div class="blog-post d-flex">
+                        <i class="fa-solid fa-clipboard fs-4 p-3" style="color: #FFD43B;"></i>
+                        <div>
+                            <a href="#">Trafikni Oshirish uchun 9 ta Kontent Marketing G‘oyasi</a>
                         </div>
                     </div>
                 </div>
-                <div class="social-icons d-flex justify-content-center w-100">
-                    <a href="#"><i class="bi bi-facebook p-3"></i></a>
-                    <a href="#"><i class="bi bi-twitter p-3"></i></a>
-                    <a href="#"><i class="bi bi-instagram p-3"></i></a>
-                    <a href="#"><i class="bi bi-telegram p-3"></i></a>
-                </div>
+            </div>
+            <div class="social-icons d-flex justify-content-center w-100">
+                <a href="#"><i class="bi bi-facebook p-3"></i></a>
+                <a href="#"><i class="bi bi-twitter p-3"></i></a>
+                <a href="#"><i class="bi bi-instagram p-3"></i></a>
+                <a href="#"><i class="bi bi-telegram p-3"></i></a>
             </div>
         </div>
+    </div>
 
 
 
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="app.js"></script>
-    </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
 
-    </html>
+</html>

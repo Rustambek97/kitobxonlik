@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirish</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .body-web {
+            background: linear-gradient(135deg, #ffc107, #ffca2c);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            position: fixed;
+            width: 100%;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: transparent;
+            border: none;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #ffc107;
+            box-shadow: 0 0 8px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-primary {
+            background: #ffc107;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #ffca2c;
+            transform: translateY(-2px);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .toggle-link {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toggle-link:hover {
+            text-decoration: underline;
+            color: #ffca2c;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fa-solid fa-book" style="color: #ffc107;"></i> Kitobxonlar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pauloDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Kitoblar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pauloDropdown">
+                            <li><a class="dropdown-item" href="../index.html#kitob_janr">Kitob janrlari</a></li>
+                            <li><a class="dropdown-item" href="../index.html#kitob_klub">Kitob klublari</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Iqtiboslar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tadbir va tanlovlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#yozuvchilar">Yozuvchilar</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center position-relative">
+
+                    <div class="search-form me-2" id="searchForm">
+                        <div class="input-group">
+                            <span class="input-group-text" style="background-color: #ffc107"><i
+                                    class="fa-solid fa-magnifying-glass" style="color: white"></i></span>
+                            <input type="text" class="form-control" placeholder="Qidirish...">
+                        </div>
+                    </div>
+
+                    <a class="btn btn-warning kitoblarim-btn" href="#">Mening Kitoblarim</a>
+                    <a href="login.html"><button class="btn btn-login me-2">Login</button></a>
+                    <a href="register.html"><button class="btn btn-register">Register</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Page -->
+    <div class="body-web">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Kirish</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail"
+                                        placeholder="Email kiriting" required>
+                                    <div id="loginEmailError" class="error-message">Iltimos, to'g'ri email kiriting
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Parol</label>
+                                    <input type="password" class="form-control" id="loginPassword"
+                                        placeholder="Parol kiriting" required>
+                                    <div id="loginPasswordError" class="error-message">Parol kamida 6 belgi bo'lishi
+                                        kerak</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Kirish</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                <p>Akountingiz yo'qmi? <a href="register.html" class="toggle-link">Ro'yxatdan o'tish</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Form validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Login Form Submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const emailError = document.getElementById('loginEmailError');
+            const passwordError = document.getElementById('loginPasswordError');
+
+            emailError.style.display = 'none';
+            passwordError.style.display = 'none';
+
+            let isValid = true;
+
+            if (!validateEmail(email)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                passwordError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Kirish muvaffaqiyatli!'); // Backendga ulash uchun o'zgartiriladi
+            }
+        });
+    </script>
+</body>
+
+</html>
