@@ -1,0 +1,401 @@
+/* Umumiy ranglar */
+body {
+    background-color: #f5f5d5;
+    user-select: none;
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+/* Bootstrap carousel uchun */
+.carousel-item {
+    height: 400px;
+    background-color: #f5f5d5;
+}
+
+.carousel-text {
+    padding: 50px;
+}
+
+.carousel-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.carousel-text p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.btn-shop {
+    background-color: #f0a500;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.carousel-image img {
+    max-height: 350px;
+}
+
+/* Kitob kartalari */
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* AUTHOR carousel (custom) uchun prefiks qo‘shildi) */
+.author-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.author-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 1rem;
+}
+
+.author-carousel-item {
+    min-width: 250px;
+    flex: 0 0 auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.author-carousel-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.author-carousel-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.author-prev-btn {
+    left: 0;
+}
+
+.author-next-btn {
+    right: 0;
+}
+
+.author-carousel-item a {
+    text-decoration: none;
+}
+
+.author-carousel-item {
+    min-width: 250px;
+    flex: 0 0 auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover holatidagi effektlar */
+.author-carousel-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+.author-carousel-item:hover {
+    background: linear-gradient(to bottom right, #fff8e1, #ffe0b2);
+}
+
+.book-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.book-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+/* Rasmga alohida effekt (optional) */
+.book-card img:hover {
+    filter: contrast(110%) brightness(1.1);
+    transition: filter 0.3s ease;
+}
+
+.book-card .title:hover {
+    color: #f0a500;
+}
+
+#bookList {
+    display: flex;
+    flex-wrap: wrap;
+    /* Kitoblar orasidagi bo‘shliq */
+    justify-content: center;
+}
+
+.book-card {
+    flex: 0 0 calc(25% - 1.5rem);
+    /* 4ta ustunli grid uchun */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+/* Ruxsat berilgan ekran kengligi kichik bo‘lsa, responsiv qilish */
+@media (max-width: 992px) {
+    .book-card {
+        flex: 0 0 calc(50% - 1.5rem);
+        /* planshetlar uchun 2ta ustun */
+    }
+}
+
+@media (max-width: 576px) {
+    .book-card {
+        flex: 0 0 100%;
+        /* telefonlar uchun 1ta ustun */
+    }
+}
+
+.book-card {
+    flex: 0 0 calc(25% - 1.5rem);
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
+    /* istasangiz balandlikni cheklab qo‘yish */
+}
+
+.featured-book-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.featured-book-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.discount-badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.featured-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.featured-desc {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.small-book-card img {
+    transition: transform 0.3s ease;
+}
+
+.small-book-card:hover img {
+    transform: scale(1.05);
+}
+
+.small-book-card .book-title {
+    font-size: 1rem;
+}
+
+.price {
+    font-size: 0.95rem;
+}
+
+.featured-book-wrapper img {
+    max-height: 600px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.small-book-card img {
+    height: 150px;
+    object-fit: contain;
+}
+
+/* advertising-2 */
+.promo-card {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.promo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.promo-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.promo-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.promo-footer {
+    background-color: #ffc107;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.promo-footer i {
+    margin-right: 5px;
+}
+
+/* Footer */
+.banner-section {
+    background-color: #a3bffa;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-section img {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.banner-section img:nth-child(1) {
+    top: 10px;
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+.banner-section img:nth-child(2) {
+    top: 20px;
+    left: 150px;
+    transform: rotate(20deg);
+}
+
+.banner-section img:nth-child(3) {
+    top: 10px;
+    right: 150px;
+    transform: rotate(-10deg);
+}
+
+.banner-section img:nth-child(4) {
+    top: 20px;
+    right: 10px;
+    transform: rotate(15deg);
+}
+
+.subscribe-box {
+    background-color: white;
+    border-radius: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.subscribe-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.subscribe-box button {
+    border-radius: 50px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.footer-section {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.footer-section h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-section a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: #000;
+}
+
+.footer-section .social-icons a {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.blog-post img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}   

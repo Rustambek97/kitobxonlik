@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-book" style="color: #ffc107;"></i> Kitobxonlar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pauloDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Kitoblar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pauloDropdown">
+                            <li><a class="dropdown-item" href="#">Kitob janrlari</a></li>
+                            <li><a class="dropdown-item" href="#">Kitob klublari</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Iqtiboslar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tadbir va tanlovlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Yozuvchilar</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center position-relative">
+
+                    <div class="search-form me-2" id="searchForm">
+                        <div class="input-group">
+                            <span class="input-group-text" style="background-color: #ffc107"><i
+                                    class="fa-solid fa-magnifying-glass" style="color: white"></i></span>
+                            <input type="text" class="form-control" placeholder="Qidirish...">
+                        </div>
+                    </div>
+
+                    <a class="btn btn-warning kitoblarim-btn" href="#">Mening Kitoblarim</a>
+                    <button class="btn btn-login me-2">Login</button>
+                    <button class="btn btn-register">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner py-5">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 carousel-text">
+                            <p class="text-uppercase">Yangi O'qish Madaniyati</p>
+                            <h1>O'zbek Kitobxonlik Sayti</h1>
+                            <p>Kitobxonlikni targ‘ib qilish, yoshlarning bilimini oshirish va sifatli asarlarni taqdim
+                                etish uchun yaratilgan platforma.</p>
+                            <button class="btn btn-warning">Ko‘proq bilish</button>
+                        </div>
+                        <div class="col-md-6 carousel-image text-center pt-3">
+                            <img src="img/banner/04.jpg" alt="Book Cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 carousel-text">
+                            <p class="text-uppercase">Eng so‘nggi asarlar</p>
+                            <h1>2025-yilning Eng Ko‘p O‘qilganlari</h1>
+                            <p>O‘zbekistonlik va jahon adiblarining sara kitoblarini toping. Har bir kitob – yangi
+                                dunyo!</p>
+                            <button class="btn btn-warning">Ko‘rib chiqish</button>
+                        </div>
+                        <div class="col-md-6 carousel-image text-center pt-3">
+                            <img src="img/banner/11.jpg" alt="Book Cover 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 carousel-text">
+                            <p class="text-uppercase">Kitobxonlar uchun maxsus</p>
+                            <h1>Elektron va bosma kitoblar</h1>
+                            <p>Har xil janrdagi kitoblar: badiiy, ilmiy, tarixiy va bolalar uchun asarlar barchasi bir
+                                joyda.</p>
+                            <button class="btn btn-warning">Tanlang va o‘qing</button>
+                        </div>
+                        <div class="col-md-6 carousel-image text-center pt-3">
+                            <img src="img/banner/12.jpg" alt="Book Cover 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Top Categories Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Eng Sara Kategoriyalar</h2>
+        <div class="text-center mb-4">
+            <button class="btn btn-outline-dark category-btn active" data-category="all">Barchasi</button>
+            <button class="btn btn-outline-dark category-btn" data-category="tarixiy">Tarixiy</button>
+            <button class="btn btn-outline-dark category-btn" data-category="zamonaviy">Zamonaviy Nashr</button>
+            <button class="btn btn-outline-dark category-btn" data-category="mashhur">Mashhur Mualliflar</button>
+        </div>
+        <div class="row" id="bookList">
+
+            <!-- Kitoblar -->
+            <div class="col-md-3 mb-4 book-card" data-category="tarixiy">
+                <div class="card h-100">
+                    <img src="img/front_img_png/01.png" class="card-img-top" alt="Book 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Muhabbatlar – Birlik Ramzi</h5>
+                        <p class="card-text">Tarixiy qadriyatlar va ruhiy uyg‘unlik haqida.</p>
+                        <p class="card-text text-primary">$122.00</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="zamonaviy">
+                <div class="card h-100">
+                    <img src="img/front_img_png/02.png" class="card-img-top" alt="Book 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Ufq</h5>
+                        <p class="card-text">Yozuvchining hayotiy xotiralari va izlanishlari haqida.</p>
+                        <p class="card-text text-primary">125 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="tarixiy">
+                <div class="card h-100">
+                    <img src="img/front_img_png/03.png" class="card-img-top" style="object-fit: cover;" alt="Book 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Kecha va Kunduz</h5>
+                        <p class="card-text">O‘zbek milliy uyg‘onish davrining chuqur tahlili.</p>
+                        <p class="card-text text-primary">260 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="tarixiy">
+                <div class="card h-100">
+                    <img src="img/front_img_png/04.png" class="card-img-top" alt="Book 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Ikki Eshik Orasi</h5>
+                        <p class="card-text">Yurak va ong o‘rtasidagi kurash haqida.</p>
+                        <p class="card-text text-primary">95 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mashhur Mualliflar -->
+            <div class="col-md-3 mb-4 book-card" data-category="mashhur">
+                <div class="card h-100">
+                    <img src="img/front_img/5e15c064317a6.jpg.webp" class="card-img-top" alt="Book 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Uch Ildiz</h5>
+                        <p class="card-text">Oila va jamiyat orasidagi murakkab munosabatlar.</p>
+                        <p class="card-text text-primary">55 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="mashhur">
+                <div class="card h-100">
+                    <img src="img/front_img/27f9d5c41279a2d5b7238.jpg" class="card-img-top" alt="Book 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Chinor</h5>
+                        <p class="card-text">Yashash, yo‘qotish va bardosh haqida falsafiy asar.</p>
+                        <p class="card-text text-primary">140 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="mashhur">
+                <div class="card h-100">
+                    <img src="img/front_img/5901fe6483310c89c35b54455f2a55572022070410190381524DI714nsUoq.jpg.webp"
+                        class="card-img-top" alt="Book 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Qora Ko‘zlar</h5>
+                        <p class="card-text">Muhabbat va sadoqatning chinakam sinovi.</p>
+                        <p class="card-text text-primary">160 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4 book-card" data-category="mashhur">
+                <div class="card h-100">
+                    <img src="img/front_img/61a88f44b43b4.jpg" class="card-img-top" alt="Book 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Yulduzli Tunlar</h5>
+                        <p class="card-text">Millat va muhabbat yo‘lida fidoyilik.</p>
+                        <p class="card-text text-primary">105 000 so'm</p>
+                        <div>★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- authors carousel -->
+    <section class="authors-carousel container my-5">
+        <h2 class="text-center mb-4">Taniqli Mualliflari</h2>
+        <div class="author-carousel-wrapper">
+            <button class="author-carousel-btn author-prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
+
+            <div class="author-carousel-track" id="carouselContainer">
+                <!-- Har bir muallif -->
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Abdulla Qodiriy.jpg" alt="Abdulla Qodiriy">
+                    <h3>Abdulla Qodiriy</h3>
+                    <p>Biografiya - Roman - Tarixiy fantastika</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Cho'lpon.png" alt="Cho‘lpon">
+                    <h3>Cho‘lpon</h3>
+                    <p>She’riyat - Drama - Roman</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Pirimqul Qodirov.jpg" alt="Pirimqul Qodirov">
+                    <h3>Pirimqul Qodirov</h3>
+                    <p>Tarixiy roman - Biografiya</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Alisher Navoiy.jpg" alt="Alisher Navoiy">
+                    <h3>Alisher Navoiy</h3>
+                    <p>She’riyat - G‘azal - Falsafa</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Abdulla Avloniy.jpg" alt="Abdulla Avloniy">
+                    <h3>Abdulla Avloniy</h3>
+                    <p>Maorif - She’riyat - Drama</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+
+                <div class="author-carousel-item">
+                    <img src="img/mualliflar/Tohir Malik.jpg" alt="Tohir Malik">
+                    <h3>Tohir Malik</h3>
+                    <p>Detektiv - Triller - Roman</p>
+                    <a href="#">Barchasini ko‘rish</a>
+                </div>
+            </div>
+
+            <button class="author-carousel-btn author-next-btn" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+
+    <!-- advertising -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Eng ko'p o'qilgan</h2>
+        <div class="row">
+            <!-- Featured Book (Left Side) -->
+            <div class="col-md-6">
+                <div class="featured-book-wrapper card border-0 shadow-sm">
+                    <div class="position-relative">
+                        <img src="img/front_img_png/05.png" alt="Featured Book" class="img-fluid">
+                        <div
+                            class="discount-badge position-absolute top-0 start-0 bg-danger text-white px-3 py-1 rounded-end">
+                            30% CHEGIRMA</div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="featured-title">Mening Yo‘lim</h3>
+                        <p class="text-muted mb-1">Muallif: Abdulla Qodiriy</p>
+                        <p class="featured-desc">
+                            Bu kitob o‘zbek adabiyotidagi eng muhim asarlardan biri bo‘lib, unda Abdulla Qodiriyning
+                            hayoti va
+                            ijodiy yo‘li haqida so‘z boradi.
+                        </p>
+                        <p class="price fw-semibold">Narxi: 86,000 so‘m</p>
+                        <button class="btn btn-warning text-white fw-semibold">Savatga qo‘shish</button>
+                        <div class="mt-2">
+                            <a href="#" class="text-muted me-3"><i class="bi bi-heart"></i></a>
+                            <a href="#" class="text-muted"><i class="bi bi-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Books (Right Side) -->
+            <div class="col-md-6">
+                <div class="row g-3">
+                    <div class="col-6" *ngFor="let book of books">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/astranomiya.jpg" alt="Book 1">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Mehrobdan Chayon</p>
+                            <p class="text-muted small mb-1">Abdulla Qodiriy</p>
+                            <p class="price text-warning fw-semibold">125,000 so‘m</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/get-image.jpg" alt="Book 2">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Avlodlar Davoni Humoyun va Akbar</p>
+                            <p class="text-muted small mb-1">Pirimqul Qodirov</p>
+                            <p class="price text-warning fw-semibold">90,000 so‘m</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/7686.jpg" alt="Book 3">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Zulmat Ichra Nur</p>
+                            <p class="text-muted small mb-1">Mirkarim Osim</p>
+                            <p class="price text-warning fw-semibold">120,000 so‘m</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/61a88f44b43b4.jpg" alt="Book 4">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Yulduzli Tunlar</p>
+                            <p class="text-muted small mb-1">Pirimqul Qodirov</p>
+                            <p class="price text-warning fw-semibold">89,000 so‘m</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/f0bf4a2da952528910047c31b6c2e9512022110612490538293PQt9COskpR.jpg.webp"
+                                alt="Book 5">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Ota izidan</p>
+                            <p class="text-muted small mb-1">Odil Yoqubov</p>
+                            <p class="price text-warning fw-semibold">112,000 so‘m</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="small-book-card card border-0 shadow-sm text-center h-100 p-2">
+                            <img src="img/front_img/62f633625caeb.png.webp" alt="Book 6">
+                            <p class="book-title mt-2 mb-1 fw-semibold">Shohruh va Gavharshod</p>
+                            <p class="text-muted small mb-1">Primqul Qodirov</p>
+                            <p class="price text-warning fw-semibold">78,000 so‘m</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advertising-2 -->
+    <div class="container my-5">
+        <!-- Promo Cards -->
+        <div class="row g-4">
+            <!-- Promo Card 1 -->
+            <div class="col-md-4">
+                <div class="promo-card shadow-sm">
+                    <img src="img/front_img/i.webp" alt="Promo 1">
+                    <div class="promo-overlay">15% CHEGIRMA</div>
+                    <div class="promo-text">
+                        <h4 class="fw-bold">Mirkarim Osim - Shiroq</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Promo Card 2 -->
+            <div class="col-md-4">
+                <div class="promo-card shadow-sm">
+                    <img src="img/front_img/27f9d5c41279a2d5b7238.jpg" alt="Promo 2">
+                    <div class="promo-overlay">15% QO‘SHIMCHA</div>
+                    <div class="promo-text">
+                        <h4 class="fw-bold">Asqad Muxtor - Chinor</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Promo Card 3 -->
+            <div class="col-md-4">
+                <div class="promo-card shadow-sm">
+                    <img src="img/front_img/roman.jpg" alt="Promo 3">
+                    <div class="promo-overlay">30% GACHA CHEGIRMA</div>
+                    <div class="promo-text">
+                        <h4 class="fw-bold">Murod Muhammad do'st - Lolazor</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Promo -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="promo-footer">
+                    <span><i class="bi bi-truck"></i> Butun Dunyo Bo‘ylab Bepul Yetkazib Berish</span>
+                    <span><i class="bi bi-percent"></i> 20% Chegirma, Agar Imkoningiz Bo‘lmasa</span>
+                    <span><i class="bi bi-clock"></i> Butun Dunyo Bo‘ylab 24/7 Yetkazib Berish</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <!DOCTYPE html>
+    <html lang="uz">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Footer va Banner - Kitobxonlik</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            .banner-section {
+                background-color: #a3bffa;
+                padding: 20px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .banner-section img {
+                position: absolute;
+                opacity: 0.2;
+            }
+
+            .banner-section img:nth-child(1) {
+                top: 10px;
+                left: 10px;
+                transform: rotate(-15deg);
+            }
+
+            .banner-section img:nth-child(2) {
+                top: 20px;
+                left: 150px;
+                transform: rotate(20deg);
+            }
+
+            .banner-section img:nth-child(3) {
+                top: 10px;
+                right: 150px;
+                transform: rotate(-10deg);
+            }
+
+            .banner-section img:nth-child(4) {
+                top: 20px;
+                right: 10px;
+                transform: rotate(15deg);
+            }
+
+            .subscribe-box {
+                background-color: white;
+                border-radius: 50px;
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 5px;
+            }
+
+            .subscribe-box input {
+                border: none;
+                outline: none;
+                flex: 1;
+            }
+
+            .subscribe-box button {
+                border-radius: 50px;
+                background-color: #343a40;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+            }
+
+            .footer-section {
+                background-color: #fff;
+                padding: 40px 0;
+            }
+
+            .footer-section h5 {
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .footer-section a {
+                color: #666;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .footer-section a:hover {
+                color: #000;
+            }
+
+            .footer-section .social-icons a {
+                margin-right: 10px;
+                font-size: 1.5em;
+            }
+
+            .blog-post img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Banner Section -->
+        <div class="banner-section">
+            <img src="https://via.placeholder.com/100x150" alt="Book 1">
+            <img src="https://via.placeholder.com/100x150" alt="Book 2">
+            <img src="https://via.placeholder.com/100x150" alt="Book 3">
+            <img src="https://via.placeholder.com/100x150" alt="Book 4">
+            <div class="container text-center py-4">
+                <h4 class="mb-3">Yangiliklarga Obuna Bo‘ling</h4>
+                <div class="subscribe-box d-flex align-items-center">
+                    <input type="email" class="form-control" placeholder="Sizning Email Manzilingiz">
+                    <button class="btn">Obuna Bo‘lish</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-3">
+                        <h5>Aloqa Ma’lumotlari</h5>
+                        <p>🏠 Khiva sh., Do'stlik, 45-uy, 12-xonadon, O‘zbekiston</p>
+                        <p>📞 +998 71 123-45-67</p>
+                        <p>📱 +998 90 987-65-43</p>
+                        <p>✉️ info@kitobxonlik.uz</p>
+                        
+                    </div>
+
+                    <!-- Info -->
+                    <div class="col-md-3">
+                        <h5>Ma’lumot</h5>
+                        <a href="#">Biz Haqimizda</a>
+                        <a href="#">Aloqa</a>
+                        <a href="#">Karyera</a>
+                        <a href="#">Bizning Tariximiz</a>
+                        <a href="#">Matbuot</a>
+                    </div>
+
+                    <!-- Policy -->
+                    <div class="col-md-3">
+                        <h5>Siyosat</h5>
+                        <a href="#">Qaytarish Siyosati</a>
+                        <a href="#">Foydalanish Shartlari</a>
+                        <a href="#">Maxfiylik</a>
+                        <a href="#">Sayt Xaritasi</a>
+                    </div>
+
+                    <!-- Blog -->
+                    <div class="col-md-3">
+                        <h5>Blogdan</h5>
+                        <div class="blog-post d-flex mb-3">
+                            <i class="fa-solid fa-blog p-3 fs-4" style="color: #FFD43B;"></i>
+                            <div>
+                                <a href="#">Blog Postini Qanday Yozish Kerak: 5 Qadamda</a>
+                            </div>
+                        </div>
+                        <div class="blog-post d-flex">
+                            <i class="fa-solid fa-clipboard fs-4 p-3" style="color: #FFD43B;"></i>
+                            <div>
+                                <a href="#">Trafikni Oshirish uchun 9 ta Kontent Marketing G‘oyasi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons d-flex justify-content-center w-100">
+                    <a href="#"><i class="bi bi-facebook p-3"></i></a>
+                    <a href="#"><i class="bi bi-twitter p-3"></i></a>
+                    <a href="#"><i class="bi bi-instagram p-3"></i></a>
+                    <a href="#"><i class="bi bi-telegram p-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+
+    </html>
